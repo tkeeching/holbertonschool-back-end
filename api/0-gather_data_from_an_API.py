@@ -4,9 +4,9 @@ For a given employee ID, returns information
 about his/her TODO list progress
 """
 
-import urllib.request
-import sys
 import json
+import sys
+import urllib.request
 
 
 def get_todos_by_id(employee_id):
