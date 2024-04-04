@@ -38,7 +38,7 @@ def get_todos_by_id(employee_id):
         print('\t{}'.format(todo['title']))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     employee_id = sys.argv[1]
 
     get_todos_by_id(employee_id)
