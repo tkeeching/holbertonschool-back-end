@@ -39,7 +39,7 @@ def get_todos_by_id(employee_id):
                   len(employee_todos_total)))
 
     for todo in employee_todos_completed:
-        print('\t{}'.format(todo['title']))
+        print('\t {}'.format(todo['title']))
 
 
 if __name__ == "__main__":
