@@ -48,8 +48,8 @@ def get_todos_by_id(employee_id):
         writer = csv.writer(csvfile)
         for todo in employee_todos_total:
             writer.writerow(
-                [todo['id'],
-                 employee_details_data['name'],
+                [employee_id,
+                 employee_details_data['username'],
                  todo['completed'],
                  todo['title']])
 
