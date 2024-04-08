@@ -31,8 +31,6 @@ def get_todos_by_id(employee_id):
     employee_todos_total = [todo for todo in todos_data
                             if todo.get('userId') ==
                             employee_details_data['id']]
-    employee_todos_completed = [todo for todo in employee_todos_total
-                                if todo.get('completed') is True]
 
     # Export to CSV
     with open('{}.csv'.format(employee_id), 'w') as csvfile:
@@ -43,7 +41,7 @@ def get_todos_by_id(employee_id):
             writer.writerow(
                 ["'" + employee_id + "'",
                  "'" + employee_details_data['username'] + "'",
-                 "'" + todo_completed_status + "'",
+                 todo_completed_status,
                  "'" + todo['title'] + "'"])
 
 
