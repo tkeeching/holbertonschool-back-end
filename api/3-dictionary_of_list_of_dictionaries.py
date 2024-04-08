@@ -15,7 +15,7 @@ def get_all_employees_todos():
 
     data = {}
 
-    for employee_id in range(1, 10):
+    for employee_id in range(1, 11):
         # Fetch employee details by id and employees todos
         employee_details_response = urllib.request.urlopen(
             'https://jsonplaceholder.typicode.com/users/{}'
