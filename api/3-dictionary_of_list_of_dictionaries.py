@@ -15,13 +15,14 @@ def get_all_employees_todos():
 
     data = {}
 
-    for employee_id in range(1,10):
+    for employee_id in range(1, 10):
         # Fetch employee details by id and employees todos
         employee_details_response = urllib.request.urlopen(
-            'https://jsonplaceholder.typicode.com/users/{}'.format(employee_id))
+            'https://jsonplaceholder.typicode.com/users/{}'
+            .format(employee_id))
         todos_response = urllib.request.urlopen(
             'https://jsonplaceholder.typicode.com/todos')
-        
+
         # Convert response to JSON
         employee_details_data = json.loads(employee_details_response.read())
         todos_data = json.loads(todos_response.read())
