@@ -34,7 +34,7 @@ def get_todos_by_id(employee_id):
 
     # Export to CSV
     with open('{}.csv'.format(employee_id), 'w') as csvfile:
-        writer = csv.writer(csvfile)
+        writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
         for todo in employee_todos_total:
             todo_completed_status = (
                 'True' if todo['completed'] else 'False')
