@@ -38,12 +38,12 @@ def get_todos_by_id(employee_id):
     with open('{}.csv'.format(employee_id), 'w') as csvfile:
         writer = csv.writer(csvfile)
         for todo in employee_todos_total:
-            todo_completed_status = 'True' if todo['completed'] else 'False'
+            todo_completed_status = "'True'" if todo['completed'] else "'False'"
             writer.writerow(
-                [employee_id,
-                 employee_details_data['username'],
-                 todo_completed_status,
-                 todo['title']])
+                ["'" + employee_id + "'",
+                 "'" + employee_details_data['username'] + "'",
+                 "'" + todo_completed_status + "'",
+                 "'" + todo['title'] + "'"])
 
 
 if __name__ == "__main__":
