@@ -34,23 +34,15 @@ def get_todos_by_id(employee_id):
     employee_todos_completed = [todo for todo in employee_todos_total
                                 if todo.get('completed') is True]
 
-    # Display result
-    print('Employee {} is done with tasks({}/{}):'
-          .format(employee_details_data['name'],
-                  len(employee_todos_completed),
-                  len(employee_todos_total)))
-
-    for todo in employee_todos_completed:
-        print('\t {}'.format(todo['title']))
-
     # Export to CSV
     with open('{}.csv'.format(employee_id), 'w') as csvfile:
         writer = csv.writer(csvfile)
         for todo in employee_todos_total:
+            todo_completed_status = 'True' if todo['completed'] else 'False'
             writer.writerow(
                 [employee_id,
                  employee_details_data['username'],
-                 todo['completed'],
+                 todo_completed_status,
                  todo['title']])
 
 
